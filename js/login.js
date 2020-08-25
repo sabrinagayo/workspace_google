@@ -4,6 +4,7 @@
 function onSignIn(googleUser) {
 	var profile = googleUser.getBasicProfile();
 	var nombreUsuario = profile.getName();
+	sessionStorage.setItem('logueado', 'true');
 	localStorage.setItem('nombreUsuario', nombreUsuario);
 	console.log(nombreUsuario);
 	window.location.replace("index.html");//redirije al index.html
