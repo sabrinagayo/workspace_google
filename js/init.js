@@ -48,7 +48,7 @@ var pintarNombreUsuario = function(){
 
 var logueado = sessionStorage.getItem('logueado');//si el usuario no está logeado redirigir a login.html
 if (!window.location.href.endsWith('login.html') && sessionStorage.getItem('logueado') !== 'true') {//Si no está en el login y no se ha logeado
-  window.location.href = 'login-google.html'//redirigir a login.html
+  window.location.href = 'login.html'//redirigir a login.html
 }else{//si está logueado llama al nombre del usuario y lo pinta en el NAV
   pintarNombreUsuario();  
 }

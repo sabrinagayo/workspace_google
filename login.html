@@ -6,7 +6,10 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <title>eMercado - Todo lo que busques está aquí</title>
+  <!--OAUth -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="963683100999-bdddtnn9vogha20gse7a06mikd1s1n6q.apps.googleusercontent.com">
+  <title>LOGIN GOOGLE</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
@@ -72,9 +75,13 @@
           <!--Botón de Enviar
           <button class="btn btn-info btn-block" type="submit" name="enviar" onclick="sessionStorage.setItem('visitado', '1'); location.href='index.html';">Enviar</button>
           -->
-          <button class="btn btn-info btn-block" type="submit" name="enviar">Enviar</button>
+          <button class="btn btn-info btn-block mb-4" type="submit" name="enviar">Acceder</button>
+          <!--Sign in con Google -->
+          <div class="g-signin2 mb-4 w-100" data-onsuccess="onSignIn"></div>
+          <!--Sign out con Google -->
+          <a class="sign-out mb-4" href="#" onclick="signOut();">Sign out</a>
           <!--Copyright -->
-          <p class="mt-4 text-muted">&copy;2020</p>
+          <p class="text-muted mt-4">&copy;2020</p>
         </form>
       </div>
       <div class="col-lg-3"></div>
@@ -83,5 +90,23 @@
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
+    <!--Scripts de Google Sign In -->
+  <script type="text/javascript">
+  function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+      console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+      var id_token = googleUser.getAuthResponse().id_token;
+      console.log(id_token);
+  }
+  function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+  }
+    </script>
 </body>
 </html>
