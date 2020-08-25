@@ -2,9 +2,9 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 function onSignIn(googleUser) {
-	googleUser.preventDefault();
 	var profile = googleUser.getBasicProfile();
 	var nombreUsuario = profile.getName();
+	localStorage.setItem('nombreUsuario', nombreUsuario);
 	console.log(nombreUsuario);
 	/*
 	console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
