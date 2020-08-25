@@ -6,6 +6,8 @@ function onSignIn(googleUser) {
 	var nombreUsuario = profile.getName();
 	localStorage.setItem('nombreUsuario', nombreUsuario);
 	console.log(nombreUsuario);
+	window.location.replace("index.html");//redirije al index.html
+	return true;//hace que al final la información se envíe al servidor
 	/*
 	console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
 	console.log('Name: ' + profile.getName());
