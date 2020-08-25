@@ -43,7 +43,7 @@ var getJSONData = function(url){
 var pintarNombreUsuario = function(){
   var nombreUsuario = localStorage.getItem('nombreUsuario');
   console.log(nombreUsuario);
-  document.getElementById("navegador").innerHTML += `<a href="my-profile.html" class="py-2 d-none d-md-inline-block" id="pintarNombreUsuario">` + nombreUsuario + `</a href="my-profile.html">`;
+  document.getElementById("elNombre").innerHTML += nombreUsuario;
 }
 
 var logueado = sessionStorage.getItem('logueado');//si el usuario no está logeado redirigir a login.html
