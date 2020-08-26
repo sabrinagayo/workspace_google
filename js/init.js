@@ -46,13 +46,12 @@ var pintarNombreUsuario = function(){
   document.getElementById("navegador").innerHTML += 
   `
   <button class="btn dropdown-toggle btn-outline-secondary mr-4 text-white" type="button" data-toggle="dropdown"
-    aria-haspopup="true" aria-expanded="false" >Hola ` + nombreUsuario + `</button>
+    aria-haspopup="true" aria-expanded="false" >` + nombreUsuario + `</button>
 
   <div class="dropdown-menu">
     <a class="dropdown-item" href="my-profile-html">Mi perfil</a>
     <div class="dropdown-divider"></div>
     <a class="dropdown-item" href="#">Cerrar Sesión</a>
-    <a class="dropdown-item" href="index.html" onclick="signOut();">Cerrar Sesión</a>
   </div>
   `;
 }
