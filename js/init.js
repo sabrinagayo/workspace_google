@@ -49,9 +49,9 @@ var pintarNombreUsuario = function(){
     aria-haspopup="true" aria-expanded="false" >` + nombreUsuario + `</button>
 
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="my-profile-html">Mi perfil</a>
+    <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
     <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">Cerrar Sesión</a>
+    <a class="dropdown-item" href="#" onclick="signOut();">Sign out</a>
   </div>
   `;
 }
