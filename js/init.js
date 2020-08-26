@@ -44,9 +44,9 @@ function signOut() {
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut().then(function () {
   console.log('User signed out.');
+  });
   sessionStorage.setItem('logueado', 'false');
   window.location.href = 'login-google.html'
-  });
 }
 
 var pintarNombreUsuario = function(){
@@ -60,7 +60,7 @@ var pintarNombreUsuario = function(){
   <div class="dropdown-menu">
     <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
     <div class="dropdown-divider"></div>
-    <button class="dropdown-item" onclick="signOut();">Sign out</button>
+    <a class="dropdown-item" href="#" onclick="signOut();">Sign out</a>
   </div>
   `;
 }
