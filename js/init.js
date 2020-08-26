@@ -39,6 +39,13 @@ var getJSONData = function(url){
         return result;
     });
 }
+//Función signout de google
+function signOut() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function () {
+  console.log('User signed out.');
+  });
+}
 
 var pintarNombreUsuario = function(){
   var nombreUsuario = localStorage.getItem('nombreUsuario');
@@ -51,7 +58,7 @@ var pintarNombreUsuario = function(){
   <div class="dropdown-menu">
     <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
     <div class="dropdown-divider"></div>
-    <a href="#" onclick="signOut();">Sign out</a>
+    <a class="dropdown-item" href="login-google.html" onclick="signOut();">Sign out</a>
   </div>
   `;
 }
