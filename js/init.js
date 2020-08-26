@@ -44,6 +44,7 @@ function signOut() {
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut().then(function () {
   console.log('User signed out.');
+  window.location.replace("login-google.html");//se redirige al login ya que cierra sesión
   });
 }
 
@@ -58,7 +59,7 @@ var pintarNombreUsuario = function(){
   <div class="dropdown-menu">
     <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
     <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="login-google.html" onclick="signOut();">Sign out</a>
+    <a class="dropdown-item" href="#" onclick="signOut();">Sign out</a>
   </div>
   `;
 }
