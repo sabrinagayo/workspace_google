@@ -41,7 +41,7 @@ var getJSONData = function(url){
 }
 
 var pintarNombreUsuario = function(){
-  var nombreUsuario = localStorage.getItem('nombreUsuario');
+  var nombreUsuario = sessionStorage.getItem('nombreUsuario');
   console.log(nombreUsuario);
   document.getElementById("navegador").innerHTML += 
   `
