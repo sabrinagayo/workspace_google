@@ -41,7 +41,7 @@ var getJSONData = function(url){
 }
 
 var pintarNombreUsuario = function(){
-  var nombreUsuario = sessionStorage.getItem('nombreUsuario');
+  var nombreUsuario = localStorage.getItem('nombreUsuario');
   console.log(nombreUsuario);
   document.getElementById("navegador").innerHTML += 
   `
@@ -51,7 +51,7 @@ var pintarNombreUsuario = function(){
   <div class="dropdown-menu">
     <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
     <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="login-google.html" onclick="signOut();">Sign out</a>
+    <a class="dropdown-item" href="#" onclick="signOut();">Sign out</a>
   </div>
   `;
 }
