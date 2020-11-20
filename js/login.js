@@ -26,6 +26,7 @@ function onSignIn(googleUser) {
 			return true;//hace que al final la información se envíe al servidor
 		}
 	document.getElementById('closeSession').addEventListener('click', function(){
+		event.preventDefault();
 		var auth2 = gapi.auth2.getAuthInstance();
 		auth2.signOut().then(function () {
 		console.log('User signed out.');
