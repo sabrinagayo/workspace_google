@@ -64,7 +64,7 @@ function signOut(event) {
   });
   sessionStorage.setItem('logueado', 'false');
   window.location.href = 'login-google.html'
-}*/
+}
 function signOut(event){
   event.preventDefault();
     var auth2 = auth2.getAuthInstance();
@@ -74,7 +74,7 @@ function signOut(event){
   sessionStorage.removeItem('logged');
   sessionStorage.removeItem('userName');
   window.location.href = 'login-google.html';
-}
+}*/
 var logueado = sessionStorage.getItem('logueado');//si el usuario no está logeado redirigir a login.html
 if (!window.location.href.endsWith('login-google.html') && sessionStorage.getItem('logueado') !== 'true') {//Si no está en el login y no se ha logeado
   window.location.href = 'login-google.html'//redirigir a login.html

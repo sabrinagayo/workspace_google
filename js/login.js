@@ -25,13 +25,19 @@ function onSignIn(googleUser) {
 			window.location.replace("login-google.html");//redirije al index.html
 			return true;//hace que al final la información se envíe al servidor
 		}
-
+	document.getElementById('closeSession').addEventListener('click', function(){
+		var auth2 = gapi.auth2.getAuthInstance();
+		auth2.signOut().then(function () {
+		console.log('User signed out.');
+		});
+	})
 }
+/*
 function signOut(event) {
 	var auth2 = gapi.auth2.getAuthInstance();
 	auth2.signOut().then(function () {
 	console.log('User signed out.');
 	});
-}
+}*/
 
 document.addEventListener("DOMContentLoaded", function(e){});
