@@ -52,15 +52,15 @@ var getUserName = function(){
     <a class="dropdown-item" href="cart.html">Mi carrito</a>
     <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
     <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#" onclick="logOut(event)">Cerrar Sesión</a>
+    <a class="dropdown-item" href="#" id="closeSession">Cerrar Sesión</a>
   </div>
   `;
-}
-function logOut(event){
-  event.preventDefault();
-  sessionStorage.removeItem('logged');
-  sessionStorage.removeItem('userName');
-  window.location.href = 'login.html';
+  document.getElementById('closeSession').addEventListener('change', function(){
+    event.preventDefault();
+    sessionStorage.removeItem('logged');
+    sessionStorage.removeItem('userName');
+    window.location.href = 'login.html';  
+  });
 }
 
 var logged = sessionStorage.getItem('logged');//si el usuario no está logeado redirigir a login.html
