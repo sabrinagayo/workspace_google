@@ -22,16 +22,16 @@ function onSignIn(googleUser) {
 		if (nombreUsuario != null || nombreUsuario !=0) {
 			sessionStorage.setItem('logueado', 'true');//cambia el estado del usuario a logueado
 			localStorage.setItem('nombreUsuario', nombreUsuario);//guarda en un local storage el nombre del usuario
-			window.location.replace("index.html");//redirije al index.html
+			window.location.replace("login-google.html");//redirije al index.html
 			return true;//hace que al final la información se envíe al servidor
 		}
 
-}/*
-function signOut() {
+}
+function signOut(event) {
 	var auth2 = gapi.auth2.getAuthInstance();
 	auth2.signOut().then(function () {
 	console.log('User signed out.');
 	});
-}*/
+}
 
 document.addEventListener("DOMContentLoaded", function(e){});
