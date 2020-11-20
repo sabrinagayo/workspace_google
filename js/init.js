@@ -67,6 +67,10 @@ function signOut(event) {
 }*/
 function signOut(event){
   event.preventDefault();
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
   sessionStorage.removeItem('logged');
   sessionStorage.removeItem('userName');
   window.location.href = 'login-google.html';
