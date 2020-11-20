@@ -4,6 +4,7 @@
 function onSignIn(googleUser) {
 	var profile = googleUser.getBasicProfile();
 	var nombreUsuario = profile.getName();
+	var id_token = googleUser.getAuthResponse().id_token;
 	/*
 	sessionStorage.setItem('logueado', 'true');//cambia el estado del usuario a logueado
 	localStorage.setItem('nombreUsuario', nombreUsuario);//guarda en un local storage el nombre del usuario
