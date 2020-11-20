@@ -65,11 +65,11 @@ function signOut(event) {
   sessionStorage.setItem('logueado', 'false');
   window.location.href = 'login-google.html'
 }*/
-function signOut(event) {
-  var auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function () {
-    console.log('User signed out.');
-  });
+function signOut(event){
+  event.preventDefault();
+  sessionStorage.removeItem('logged');
+  sessionStorage.removeItem('userName');
+  window.location.href = 'login-google.html';
 }
 var logueado = sessionStorage.getItem('logueado');//si el usuario no está logeado redirigir a login.html
 if (!window.location.href.endsWith('login-google.html') && sessionStorage.getItem('logueado') !== 'true') {//Si no está en el login y no se ha logeado
