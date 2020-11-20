@@ -39,38 +39,35 @@ var getJSONData = function(url){
         return result;
     });
 }
-//Función signout de google
-function signOut() {
-  var auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function () {
-  console.log('User signed out.');
-  });
-  sessionStorage.setItem('logueado', 'false');
-  window.location.href = 'login-google.html'
-}
 
-var pintarNombreUsuario = function(){
-  var nombreUsuario = localStorage.getItem('nombreUsuario');
-  console.log(nombreUsuario);
+
+var getUserName = function(){
+  var userName = sessionStorage.getItem('userName');
   document.getElementById("navegador").innerHTML += 
   `
-  <button class="btn dropdown-toggle btn-outline-secondary mr-4 text-white" type="button" data-toggle="dropdown"
-    aria-haspopup="true" aria-expanded="false" >` + nombreUsuario + `</button>
+  <button class="btn dropdown-toggle btn-outline-secondary text-white" type="button" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false" >` + userName + `</button>
 
   <div class="dropdown-menu">
+    <a class="dropdown-item" href="cart.html">Mi carrito</a>
     <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
     <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#" onclick="signOut();">Sign out</a>
+    <a class="dropdown-item" href="#" onclick="logOut(event)">Cerrar Sesión</a>
   </div>
   `;
 }
+function logOut(event){
+  event.preventDefault();
+  sessionStorage.removeItem('logged');
+  sessionStorage.removeItem('userName');
+  window.location.href = 'login.html';
+}
 
-
-var logueado = sessionStorage.getItem('logueado');//si el usuario no está logeado redirigir a login.html
-if (!window.location.href.endsWith('login-google.html') && sessionStorage.getItem('logueado') !== 'true') {//Si no está en el login y no se ha logeado
-  window.location.href = 'login-google.html'//redirigir a login.html
-}else{//si está logueado llama al nombre del usuario y lo pinta en el NAV
-  pintarNombreUsuario();  
+var logged = sessionStorage.getItem('logged');//si el usuario no está logeado redirigir a login.html
+if (!window.location.href.endsWith('login.html') && sessionStorage.getItem('logged') !== 'true') {//Si no está en el login y no se ha logeado
+  window.location.href = 'login.html'//redirigir a login.html
+}else{//si está logged llama al nombre del usuario y lo pinta en el NAV
+  getUserName();  
 }
 
 

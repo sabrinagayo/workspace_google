@@ -72,14 +72,11 @@
             <input type="checkbox" class="custom-control-input" id="myCheck">
             <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
           </div>
-          <!--Botón de Enviar
-          <button class="btn btn-info btn-block" type="submit" name="enviar" onclick="sessionStorage.setItem('visitado', '1'); location.href='index.html';">Enviar</button>
-          -->
+          <!--BOTÓN DEL LOGIN SIN GOOGLE
           <button class="btn btn-info btn-block mb-4" type="submit" name="enviar">Acceder</button>
+          -->
           <!--Sign in con Google -->
-          <div class="g-signin2 mb-4 w-100" data-onsuccess="onSignIn"></div>
-          <!--Sign out con Google -->
-          <a class="sign-out mb-4" href="#" onclick="signOut();">Sign out</a>
+          <div class="g-signin2 mb-4 d-flex justify-content-center btn-block" data-onsuccess="onSignIn"></div>
           <!--Copyright -->
           <p class="text-muted mt-4">&copy;2020</p>
         </form>
@@ -87,26 +84,11 @@
       <div class="col-lg-3"></div>
     </div>
   </div>
-
+  <!--
+  <a href="#" onclick="signOut();">Sign out</a>
+  -->
+  <!--Scripts -->
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
-    <!--Scripts de Google Sign In -->
-  <script type="text/javascript">
-  function onSignIn(googleUser) {
-      var profile = googleUser.getBasicProfile();
-      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-      console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-      var id_token = googleUser.getAuthResponse().id_token;
-      console.log(id_token);
-  }
-  function signOut() {
-      var auth2 = gapi.auth2.getAuthInstance();
-      auth2.signOut().then(function () {
-        console.log('User signed out.');
-      });
-  }
-    </script>
 </body>
-</html>
+</html> 
