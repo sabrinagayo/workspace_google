@@ -1,4 +1,3 @@
-  
 const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
 const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
 const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/1234.json";
@@ -60,7 +59,7 @@ var pintarNombreUsuario = function(){
   <div class="dropdown-menu">
     <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
     <div class="dropdown-divider"></div>
-    <button class="dropdown-item" onclick="signOut();">Sign out</button>
+    <a class="dropdown-item" href="#" onclick="signOut();">Sign out</a>
   </div>
   `;
 }
