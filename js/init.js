@@ -41,6 +41,14 @@ var getJSONData = function(url){
     });
 }
 //Función signout de google
+function signOut() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function () {
+  console.log('User signed out.');
+  });
+  sessionStorage.setItem('logueado', 'false');
+  window.location.href = 'login-google.html'
+}
 
 var pintarNombreUsuario = function(){
   var nombreUsuario = localStorage.getItem('nombreUsuario');
@@ -52,29 +60,12 @@ var pintarNombreUsuario = function(){
   <div class="dropdown-menu">
     <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
     <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#" onclick="signOut(event);">Sign out</a>
+    <button class="dropdown-item" onclick="signOut();">Sign out</button>
   </div>
   `;
-}/*
-function signOut(event) {
-  event.preventDefault();
-  var auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function () {
-  console.log('User signed out.');
-  });
-  sessionStorage.setItem('logueado', 'false');
-  window.location.href = 'login-google.html'
 }
-function signOut(event){
-  event.preventDefault();
-    var auth2 = auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  sessionStorage.removeItem('logged');
-  sessionStorage.removeItem('userName');
-  window.location.href = 'login-google.html';
-}*/
+
+
 var logueado = sessionStorage.getItem('logueado');//si el usuario no está logeado redirigir a login.html
 if (!window.location.href.endsWith('login-google.html') && sessionStorage.getItem('logueado') !== 'true') {//Si no está en el login y no se ha logeado
   window.location.href = 'login-google.html'//redirigir a login.html
