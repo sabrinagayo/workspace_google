@@ -40,6 +40,7 @@ var getJSONData = function(url){
     });
 }
 //Función signout de google
+/*
 function signOut() {
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut().then(function () {
@@ -47,7 +48,7 @@ function signOut() {
   });
   sessionStorage.setItem('logueado', 'false');
   window.location.href = 'login-google.html'
-}
+}*/
 
 var pintarNombreUsuario = function(){
   var nombreUsuario = localStorage.getItem('nombreUsuario');
@@ -59,11 +60,13 @@ var pintarNombreUsuario = function(){
   <div class="dropdown-menu">
     <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
     <div class="dropdown-divider"></div>
-    <button class="dropdown-item btn" onclick="signOut();">Sign out</button>
+    <button class="dropdown-item btn" onclick="signOut(event);">Sign out</button>
   </div>
   `;
 }
-
+function signOut(event) {
+    document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://www.example.com";
+}
 
 var logueado = sessionStorage.getItem('logueado');//si el usuario no está logeado redirigir a login.html
 if (!window.location.href.endsWith('login-google.html') && sessionStorage.getItem('logueado') !== 'true') {//Si no está en el login y no se ha logeado

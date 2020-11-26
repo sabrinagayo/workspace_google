@@ -4,6 +4,7 @@
 function onSignIn(googleUser) {
 	var profile = googleUser.getBasicProfile();
 	var nombreUsuario = profile.getName();
+	var id_token = googleUser.getAuthResponse().id_token;
 	/*
 	sessionStorage.setItem('logueado', 'true');//cambia el estado del usuario a logueado
 	localStorage.setItem('nombreUsuario', nombreUsuario);//guarda en un local storage el nombre del usuario
@@ -15,7 +16,7 @@ function onSignIn(googleUser) {
 	console.log('Name: ' + profile.getName());
 	console.log('Image URL: ' + profile.getImageUrl());
 	console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-	var id_token = googleUser.getAuthResponse().id_token;
+	
 	console.log(id_token);
 	*/
 		if (nombreUsuario != null || nombreUsuario !=0) {
