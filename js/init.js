@@ -1,3 +1,4 @@
+  
 const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
 const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
 const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/1234.json";
@@ -40,15 +41,6 @@ var getJSONData = function(url){
     });
 }
 //Función signout de google
-/*
-function signOut() {
-  var auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function () {
-  console.log('User signed out.');
-  });
-  sessionStorage.setItem('logueado', 'false');
-  window.location.href = 'login-google.html'
-}*/
 
 var pintarNombreUsuario = function(){
   var nombreUsuario = localStorage.getItem('nombreUsuario');
@@ -60,14 +52,29 @@ var pintarNombreUsuario = function(){
   <div class="dropdown-menu">
     <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
     <div class="dropdown-divider"></div>
-    <button class="dropdown-item btn" onclick="signOut(event);">Sign out</button>
+    <a class="dropdown-item" href="#" onclick="signOut(event);">Sign out</a>
   </div>
   `;
-}
+}/*
 function signOut(event) {
-    document.location.href = "https://mail.google.com/mail/u/0/?logout&hl=en";
+  event.preventDefault();
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function () {
+  console.log('User signed out.');
+  });
+  sessionStorage.setItem('logueado', 'false');
+  window.location.href = 'login-google.html'
 }
-
+function signOut(event){
+  event.preventDefault();
+    var auth2 = auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  sessionStorage.removeItem('logged');
+  sessionStorage.removeItem('userName');
+  window.location.href = 'login-google.html';
+}*/
 var logueado = sessionStorage.getItem('logueado');//si el usuario no está logeado redirigir a login.html
 if (!window.location.href.endsWith('login-google.html') && sessionStorage.getItem('logueado') !== 'true') {//Si no está en el login y no se ha logeado
   window.location.href = 'login-google.html'//redirigir a login.html
