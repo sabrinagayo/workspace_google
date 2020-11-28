@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <link href="static/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="site-header sticky-top py-1">
+    <div class="container d-flex flex-column flex-md-row justify-content-between" id="navegador">
+      <a class="py-2 d-none navButton d-md-inline-block" href="index.html">Inicio</a>
+      <a class="py-2 d-none navButton d-md-inline-block" href="categories.html">Categorías</a>
+      <a class="py-2 d-none navButton d-md-inline-block" href="products.html">Productos</a>
+      <a class="py-2 d-none navButton d-md-inline-block" href="sell.html">Vender</a>
+    </div>
+  </nav>
+  <div class="container p-5">
+    <div class="row">
+      <div class="col-lg-12 pb-3">
+        <a href="products.html" class="text-dark">
+          <i class="fas fa-long-arrow-alt-left">Volver atrás</i>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-1" id="image-container">
+      </div>
+      <div class="col-lg-5">
+        <!--CARRUSEL-->
+        <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+          <ol class="carousel-indicators" id="liImages">
+
+          </ol>
+          <div class="carousel-inner" role="listbox" id="slide-container"></div>
+          <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <!--CARRUSEL-->
+      </div>
+      <div class="col-lg-6 pl-4">
+        <h1 class="text-justify pb-1" id="nombreProducto"></h1>
+        <small class="text-justify pb-4" id="categoriaProducto"></small>
+        <p class="text-justify pb-3" id="descripcionProducto"></p>
+        <p class="text-center pb-3" id="precioProducto">USD </p>
+        <button class="btn btn-block customButton" type="submit" name="comprar">Añadir al carrito</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <h4 class="text-center p-4">Artículos relacionados</h4>
+      </div>
+      <div class="col-lg-6"></div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="row pr-4" id="container-productosRelacionados"></div>
+      </div>
+      <div class="col-lg-6" id="valoracion-producto">
+        <form method="POST" action="" name="formularioComentario" onsubmit="newComment(event)" class="pb-4">
+          <select name="dropdown" id="score" class="browser-default custom-select mb-3" required>
+            <option value="" disabled selected>Valoración</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <textarea class="form-control rounded-0 mb-3" id="commentText" name="commentText" placeholder="Escriba su comentario" required></textarea>
+          <div class="d-flex justify-content-end">
+            <button class="btn customButton" type="submit">Publicar</button>
+          </div>
+        </form>
+        <div id="newComment"></div>
+        <div id="comentariosJson"></div>
+      </div>
+    </div>
+  </div>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="static/js/jquery-3.4.1.min.js"></script>
+  <script src="static/js/bootstrap.bundle.min.js"></script>
+  <script src="static/js/init.js"></script>
+  <script src="static/js/product-info.js"></script>
+</body>
+
+</html>
